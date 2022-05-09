@@ -1,0 +1,261 @@
+<!--
+    autor : Nikola Jovanovic
+    indeks : 2019/0440
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="projekcije.css">
+
+    <script src="projekcije.js"></script>
+
+    <title>
+        Lotus
+    </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Lotus</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="login.html" id="login">Prijava </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../register/register.html" id="sign-up">Registracija</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="" id="logout">Odjava</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../dodajRecept/dodajRecept.html" id="create_post">Dodaj recept</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../recepti/recepti.html">Prikazi recepte</a>
+                </li>
+                <li class="nav-item">
+                     <a class="nav-link active" href="../namirnice/namirnice.html">Prikazi namirnice</a>
+                </li>
+        </div>
+        </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="row-line">
+                    <div class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pretrazi po imenu"
+                            aria-label="Search">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pretrazi po kategoriji
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="addCategoryTag(this.innerText)">Drama</a>
+                        <a class="dropdown-item" href="#" onclick="addCategoryTag(this.innerText)">Akcija</a>
+                        <a class="dropdown-item" href="#" onclick="addCategoryTag(this.innerText)">Komedija</a>
+                        <a class="dropdown-item" href="#" onclick="addCategoryTag(this.innerText)">Kriminal</a>
+                        <a class="dropdown-item" href="#" onclick="addCategoryTag(this.innerText)">Scifi</a>
+                    </div>
+                </div>
+                <div id="tags">
+                    <span class="tag alert alert-danger alter-dismissible fade show" role="alert">
+                        Kategorija
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Film</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Komentari</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Opis filma</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title space">
+                            <div class="align-col">
+                                Batman
+                            </div>
+                            <div class="rating">
+                                8.5/10
+                                <i class='fa fa-star' style='color: #f3da35'></i>
+                            </div>
+                        </h5>
+                        <img class="card-img-top" src="../slike/batman.jpg" alt="Card image cap">
+                        <div class="card-text space">
+                            <div class="zanr">
+                                Akcija
+                            </div>
+                            <div class="date">
+                                28.08.2019
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#collapseId" role="button"
+                            aria-expanded="false" aria-controls="collapseId">Prikazi produkcije</a>
+                        <div class="collapse" id="collapseId">
+                            <table class="table table-stripped table-hover">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Ime bioskopa</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Roda</td>
+                                        <td>
+                                            <button class="btn btn-info" onclick="reservCard()">Rezervisi karte</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cinestar</td>
+                                        <td>
+                                            <button class="btn btn-info" onclick="reservCard()">Rezervisi karte</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="grade">
+                        Oceni:
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star checked'></i>
+                        <i onclick="rate()" class='fa fa-star'></i>
+                        <i onclick="rate()" class='fa fa-star'></i>
+                        <i onclick="rate()" class='fa fa-star'></i>
+                        <i onclick="rate()" class='fa fa-star'></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Film</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Komentari</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Opis filma</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Najbolji film</p>
+                                    <footer class="blockquote-footer">Korisnik 1</footer>
+                                    <button class="btn btn-danger">Obrisi(admin samo) </button>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                    <p>Najgori film...</p>
+                                    <footer class="blockquote-footer">Korisnik 2</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Napisi komentar"
+                                aria-label="Enter comment" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-primary" type="button">Dodaj komentar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Film</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Komentari</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Opis filma</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Ovaj film je snimljen tad i tad , glumci ti i ti...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example" class="center">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Prvi</a></li>
+            <li class="page-item"><a class="page-link" href="#">Prethodni</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Sledeci</a></li>
+            <li class="page-item"><a class="page-link" href="#">Poslednji</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
