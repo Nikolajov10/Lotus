@@ -20,21 +20,34 @@
 
     <link rel="stylesheet" href="kupovina.css">
     
-    <script src="kupovin.js"></script>
+    <script src="kupovina.js"></script>
 
     <title>Lotus</title>
 </head>
 <body>
-    Kupi
-
+    <button class="btn btn-primary" onclick="history.back()" id="top-left"> Go back </button>
+    <br>
+    <h4> Batman </h4>
     <div class="movie-container">
-        <label>Izaberi datum: </label>
-        <select id="movie">
-            <option value="250">Interstellar (Rs. 250)</option>
-            <option value="200">Kabir Singh (Rs. 200)</option>
-            <option value="150">Duniyadari (Rs. 150)</option>
-            <option value="100">Natsamrat (Rs. 100)</option>
-        </select>
+        <div >
+            <label>Izaberi salu </label>
+            <select id="movie">
+                <option value="350">Sala 5D (Rsd. 350)</option>
+                <option value="300">Sala 3D (Rsd. 300)</option>
+                <option value="250">Sala 2 (Rsd. 250)</option>
+                <option value="200">Sala 1 (Rsd. 200)</option>
+            </select>
+            
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <select id="movie">
+                <option >21.12.2022 13:05</option>
+                <option >21.03.2022 17:00</option>
+                <option >20.5.2022 19:15</option>
+                <option >25.09.2023 21:45</option>
+            </select>
+            <label>Izaberi datum i vreme </label>
+        </div>
     
         <ul class="showcase">
             <li>
@@ -43,11 +56,11 @@
             </li>
             <li>
                 <div class="seat selected"></div>
-                <small>Selected</small>
+                <small>Izabrane</small>
             </li>
             <li>
                 <div class="seat occupied"></div>
-                <small>Occupied</small>
+                <small>Zauzete</small>
             </li>
         </ul>
     
@@ -116,11 +129,11 @@
             </div>
     
             <p class="text">
-                You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
+                Izabrali ste <span id="count">0</span> sedista za totalnu cenu <span id="total">0</span> RSD.
             </p>
         </div>
     </div>
+   <button class="btn btn-primary" onclick="reserve()">Rezervisi</button>
     
-    <div class="credits"><a href="http://www.aniket.co" target="_blank">aniket.co</a></div>
 </body>
 </html>

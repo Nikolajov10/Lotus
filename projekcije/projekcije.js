@@ -14,5 +14,5 @@ const addCategoryTag = (tagName) => {
 
 
 const reservCard = () => {
-
+    window.location.href = "../kupovina/kupovina.html"
 }
